@@ -24,9 +24,13 @@ public void whoWins_ReturnsValueForKeyThatEqualsPlayerTwoGuess_String_2(){
 @Test
 public void whoWins_ReturnsValueForKeyThatEqualsPlayerTwoGuess_String_3(){
   RockPaper testRockPaper = new RockPaper();
-  String play1 = "rock";
-  String play2 = "rock";
   assertEquals("It's a tie.", testRockPaper.whoWins("rock", "rock"));
+}
+
+@Test
+public void whoWins_ChangesCaseToLowerCase_String(){
+  RockPaper testRockPaper = new RockPaper();
+  assertEquals("It's a tie.", testRockPaper.whoWins("ROCK", "roCk"));
 }
 
 }
