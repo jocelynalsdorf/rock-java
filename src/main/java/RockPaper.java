@@ -7,7 +7,16 @@ import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 
 public class RockPaper {
-  public static void main(String[] args) {}
+  public static void main(String[] args) {
+    String layout = "templates/layout.vtl";
+    get("/", (request, response) -> {
+      Map<String, Object> model = new Hashmap<String, Object>();
+      model.put("template", "templates/home.vtl");
+      
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+  }
 
     public String whoWins(String playerOne, String playerTwo)  {
 
