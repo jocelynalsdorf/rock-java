@@ -11,24 +11,31 @@ public class RockPaper {
     Map<String, String> paperHash = new HashMap<String, String>();
     Map<String, String> scissorHash = new HashMap<String, String>();
 
-    rockHash.put("rock", "tie");
-    rockHash.put("paper", "lose");
-    rockHash.put("scissors", "win");
+    rockHash.put("rock", "It's a tie.");
+    rockHash.put("paper", "Player two, you win!");
+    rockHash.put("scissors", "Player one, you win!");
 
-    paperHash.put("rock", "win");
-    paperHash.put("paper", "tie");
-    paperHash.put("scissors", "lose");
+    paperHash.put("rock", "Player one, you win!");
+    paperHash.put("paper", "It's a tie.");
+    paperHash.put("scissors", "Player two, you win!");
 
-    scissorHash.put("rock", "lose");
-    scissorHash.put("paper", "win");
-    scissorHash.put("scissors", "tie");
+    scissorHash.put("rock", "Player two, you win!");
+    scissorHash.put("paper", "Player one, you win!");
+    scissorHash.put("scissors", "It's a tie.");
 
-    if (player2.equals("rock")) {
-     return rockHash.get("rock");
-    } else if (player2.equals("paper")){
-     return rockHash.get("paper");
+    if(player1.equals("rock")){
+
+      return rockHash.get(player2);
+
+    } else if(player1.equals("paper")){
+
+      return paperHash.get(player2);
+
     } else {
-     return rockHash.get("scissors");
+
+      return scissorHash.get(player2);
+
     }
+
   }
 }
